@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Learn more: https://github.com/AdrianoPereira
+# https://github.com/AdrianoPereira/cap239/tree/master/cappy239
 import os
 import re
 import sys
@@ -14,14 +14,22 @@ if sys.argv[-1] == 'publish':
     os.system('twine upload dist/*')
     sys.exit()
 
-packages = ['pmodel']
+if sys.argv[-1] == 'uninstall':
+    os.system('rm -rf build')
+    os.system('rm -rf dist')
+    os.system('rm -rf cappy239.egg-info')
+
+    os.system('twine upload dist/*')
+    sys.exit()
+
+packages = ['cappy239']
 
 requires = [
     'numpy>=1.15.2',
 ]
 
 about = {}
-with open(os.path.join(here, 'pmodel', '__version__.py'), 'r', 'utf-8') as f:
+with open(os.path.join(here, 'cappy239', '__version__.py'), 'r', 'utf-8') as f:
     exec(f.read(), about)
 
 with open('README.md', 'r', 'utf-8') as f:
@@ -40,7 +48,7 @@ setup(
     url=about['__url__'],
     packages=packages,
     package_data={'': ['LICENSE', 'NOTICE'], 'requests': ['*.pem']},
-    package_dir={'pmodel': 'pmodel'},
+    package_dir={'cappy239': 'cappy239'},
     include_package_data=True,
     python_requires="!=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     install_requires=requires,
