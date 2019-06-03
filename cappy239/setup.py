@@ -22,7 +22,7 @@ if sys.argv[-1] == 'uninstall':
     os.system('twine upload dist/*')
     sys.exit()
 
-packages = ['cappy239']
+# packages = ['cappy239']
 
 requires = [
     'numpy>=1.15.2',
@@ -46,10 +46,10 @@ setup(
     author=about['__author__'],
     author_email=about['__author_email__'],
     url=about['__url__'],
-    packages=packages,
+    packages=['cappy239'],
     package_data={'': ['LICENSE', 'NOTICE'], 'requests': ['*.pem']},
-    package_dir={'cappy239': 'cappy239'},
-    include_package_data=True,
+    # package_dir={'cappy239': 'cappy239'},
+    # include_package_data=True,
     python_requires="!=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     install_requires=requires,
     license=about['__license__'],
