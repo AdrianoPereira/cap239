@@ -1,5 +1,6 @@
 import numpy as np
 import math
+import matplotlib.pyplot as plt
 
 # class Cappy239(object):
 # def __init__(self): 
@@ -28,6 +29,43 @@ def powernoise(beta, N, varargin='normalize'):
         x = normalize(x)
 
     return x
+
+def plot_noise(serie, beta=0, save=False):
+
+    title, color, width, height = '', '', 17, 5
+    
+    if beta == 0:
+        title = 'White Noise β=0'
+        color = '#0100FF'
+    elif beta == 1:
+        title = 'Pink Noise β=1'
+        color = 'hotpink'
+    elif beta == 2:
+        title = 'Red Noise β=2'
+        color = 'red' 
+
+    plt.figure(figsize=(width, height))
+    plt.title(title, fontdict={'fontsize': '25'}, y=1.03)
+    plt.xlabel('Time', fontdict={'fontsize': '15'})
+    plt.ylabel('Amplitude', fontdict={'fontsize': '15'})
+    plt.plot(serie, color=color)
+    if save:
+        plt.savefig('./images/s2.png', format='png', dpi=400)
+    plt.show()
+
+def plot_chaotic(serie, save=False):   
+    plt.figure(figsize=(17, 5))
+    plt.title('Logistic Map ', fontdict={'fontsize': '25'}, y=1.03)
+    plt.xlabel('N', fontdict={'fontsize': '25'})
+    plt.plot(serie, color='#0000FF')
+    
+    if save:
+        plt.savefig('./images/s4.png', format='png', dpi=400)
+    
+    plt.show()
+
+
+
 
 def logistic_map(rho, a0, n):
     a = np.zeros(n)

@@ -148,7 +148,7 @@ def main():
 	old_settings = np.seterr(divide = 'ignore', invalid = 'ignore', over = 'ignore')
 	
 	# Carrega o arquivo de dados
-	nomeArquivo = 's22.txt'		
+	nomeArquivo = 's8.txt'		
 	data = np.genfromtxt(nomeArquivo,
                          delimiter = ',',
                          dtype = 'float32',
