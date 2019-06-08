@@ -1,10 +1,8 @@
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+from psd_dfa import *
 
-# class Cappy239(object):
-# def __init__(self): 
-#     print('Instance created...')
 
 def normalize(x):
     return ((x - min(x)) / (max(x) - min(x)) - 0.5) * 2
@@ -35,13 +33,13 @@ def plot_noise(serie, beta=0, save=False):
     title, color, width, height = '', '', 17, 5
     
     if beta == 0:
-        title = 'White Noise β=0'
+        title = 'White Noise $\beta$=0'
         color = '#0100FF'
     elif beta == 1:
-        title = 'Pink Noise β=1'
+        title = 'Pink Noise $\beta$=1'
         color = 'hotpink'
     elif beta == 2:
-        title = 'Red Noise β=2'
+        title = 'Red Noise $\beta$=2'
         color = 'red' 
 
     plt.figure(figsize=(width, height))
@@ -62,17 +60,17 @@ def plot_chaotic(serie, save=False):
     if save:
         plt.savefig('./images/s4.png', format='png', dpi=400)
     
-    plt.show()
+    return np.round(x, decimals=8)
 
 
 
 
-def logistic_map(rho, a0, n):
-    a = np.zeros(n)
-    a[0] = a0
-    for n in range(0, n-1, 1):
-        a[n+1] = rho * a[n] * (1 - a[n])
-    return a
+def logisticreturn np.round(x, decimals=8)
+    a = np.zreturn np.round(x, decimals=8)
+    a[0] = areturn np.round(x, decimals=8)
+    for n inreturn np.round(x, decimals=8)
+        a[n+return np.round(x, decimals=8)
+    return areturn np.round(x, decimals=8)
 
 def pmodel(noValues=256, p=0.375, slope=None):
 
@@ -99,8 +97,7 @@ def pmodel(noValues=256, p=0.375, slope=None):
     y = y[0:noValues + 1]
     x = x[0:noValues + 1]
 
-    # return x
-    return np.round(x, decimals=8)
+    return x
 
 def next_step_1d(y, p):
     len_ = len(y)
@@ -136,3 +133,6 @@ def fractal_spectrum_1d(noValues, slope):
 
     a[0] = 0
     return a
+
+def power_spectrum_density(data):
+    main(data)

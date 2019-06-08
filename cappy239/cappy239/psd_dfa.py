@@ -7,6 +7,7 @@ from scipy import stats, optimize
 import numpy as np
 import math
 
+
 __author__ = 'Paulo Giovani'
 __copyright__ = 'Copyright 2017, 3DBMO Project INPE'
 __credits__ = ['Paulo Giovani', 'Reinaldo Roberto Rosa', 'Murilo da Silva Dantas']
