@@ -2,10 +2,10 @@ library("fitdistrplus") #Package
 library(rio) #Package
 
 #Setting directory of the file
-setwd("/home/adriano/cap239/cullen-frey")
+setwd(".")
 
 #Choosing the file 
-f <- data.table::fread(file = "./out.dat")
+f <- read.csv(file = "/home/adriano/cap239/series/irregular.txt")
 
 #trace("descdist",edit=TRUE)
 
@@ -20,7 +20,5 @@ fy <- fitdist(f$V30, "gamma")
 fw <- fitdist(f$V30, "lnorm")
 fw <- fitdist(f$V30, "beta")
 
-summary(fy)
 
-summary(fw)
 
