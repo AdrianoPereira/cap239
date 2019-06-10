@@ -20,7 +20,7 @@ fy <- fitdist(f$V30, "gamma")
 fw <- fitdist(f$V30, "lnorm")
 fw <- fitdist(f$V30, "beta")
 
-summary(fy)
+#summary(fy)
 
-summary(fw)
+#summary(fw)
 
